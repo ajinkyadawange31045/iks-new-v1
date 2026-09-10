@@ -75,7 +75,6 @@ export const maritimeResearchAreas = [
     coverImage: '/images/maritime-research/archival-material-studies/4.png',
     images: [
       { src: '/images/maritime-research/archival-material-studies/4.png', caption: 'Visual Documentation of Maritime Architecture & Motifs' },
-      // { src: '/images/maritime-research/archival-material-studies/2asdf.png', caption: 'Material Culture and Coastal Studies' },
     ],
     summary:
       'We explored coastal settlements to observe how seafaring shapes everyday living spaces—looking at the distinctive architecture of port towns and finding houses adorned with carved fish symbols and ship steering wheels that bring the spirit of the sea right into the home.',

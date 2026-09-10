@@ -5,29 +5,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Compass } from 'lucide-react';
 import { maritimeResearchAreas } from '@/data/maritimeResearch';
 import MaritimeResearchModal from '@/components/home/MaritimeResearchModal';
-
-const artisticAreas = [
-  {
-    title: 'Chitrakathi and Visual Storytelling',
-    description: 'Studying traditional narrative art from Pinguli, Paithan, and other regions.',
-  },
-  {
-    title: 'Performative and Oral Folk Cultures',
-    description: 'Connecting painting traditions with shadow puppetry, folk theatre, and regional literature.',
-  },
-  {
-    title: 'Provenance and Materiality Studies',
-    description: 'Tracing the history, ownership, and movement of paintings across institutions.',
-  },
-  {
-    title: 'Regional Art Styles and Iconography',
-    description: 'Mapping stylistic developments and aesthetic influences.',
-  },
-  {
-    title: 'Visual Culture and Community Engagement',
-    description: 'Understanding how local art forms shape identity, memory, and heritage.',
-  },
-];
+import { artisticResearchAreas } from '@/data/artisticResearch';
+import ArtisticResearchModal from '@/components/home/ArtisticResearchModal';
 
 const projects = [
   {
@@ -78,6 +57,9 @@ export default function StrategicInitiatives({ maritimeRef, artisticRef }) {
   const [selectedMaritimeArea, setSelectedMaritimeArea] = useState(null);
   const [isMaritimeModalOpen, setIsMaritimeModalOpen] = useState(false);
 
+  const [selectedArtisticArea, setSelectedArtisticArea] = useState(null);
+  const [isArtisticModalOpen, setIsArtisticModalOpen] = useState(false);
+
   const handleOpenMaritimeModal = (area) => {
     setSelectedMaritimeArea(area);
     setIsMaritimeModalOpen(true);
@@ -85,6 +67,15 @@ export default function StrategicInitiatives({ maritimeRef, artisticRef }) {
 
   const handleCloseMaritimeModal = () => {
     setIsMaritimeModalOpen(false);
+  };
+
+  const handleOpenArtisticModal = (area) => {
+    setSelectedArtisticArea(area);
+    setIsArtisticModalOpen(true);
+  };
+
+  const handleCloseArtisticModal = () => {
+    setIsArtisticModalOpen(false);
   };
 
   return (
@@ -173,19 +164,49 @@ export default function StrategicInitiatives({ maritimeRef, artisticRef }) {
         </p>
       </motion.div>
 
+      {/* 5-Part Interactive Visual Cards for Artistic Traditions (3 in Top Row, 2 Centered in Bottom Row) */}
       <div className="flex flex-wrap justify-center gap-8 lg:gap-10 mb-16">
-        {artisticAreas.map((area, index) => (
+        {artisticResearchAreas.map((area, index) => (
           <motion.div
-            key={area.title}
+            key={area.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc((100%-5rem)/3)] flex flex-col"
+            onClick={() => handleOpenArtisticModal(area)}
+            className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc((100%-5rem)/3)] flex flex-col group cursor-pointer"
           >
-            <div className="flex flex-col items-center justify-center min-h-[260px] h-full research-card rounded-3xl shadow-xl p-8 text-center w-full hover:shadow-2xl transition-shadow relative z-0">
-              <h3 className="text-lg md:text-xl font-serif-elegant font-semibold text-[#5c3a2a] tracking-wider mb-2 relative z-10">{area.title}</h3>
-              <p className="text-[#8b6f5e] text-sm md:text-base leading-relaxed font-serif-body relative z-10">{area.description}</p>
+            <div className="flex flex-col h-full research-card rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 p-5 sm:p-6 text-center border border-[#8b6f5e]/30 group-hover:border-[#8b4a3c]/50 group-hover:-translate-y-1.5 relative overflow-hidden">
+              
+              {/* Strong 16:9 Visual Image */}
+              <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-4 bg-stone-900 shadow-md border border-[#8b6f5e]/20">
+                <img
+                  src={area.coverImage}
+                  alt={area.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg md:text-xl font-serif-elegant font-semibold text-[#5c3a2a] tracking-wider mb-2 group-hover:text-[#8b4a3c] transition-colors relative z-10 leading-snug">
+                {area.title}
+              </h3>
+
+              {/* Short Supporting Description */}
+              <p className="text-[#8b6f5e] text-sm md:text-base leading-relaxed font-serif-body relative z-10 mb-2 flex-1">
+                {area.cardDescription}
+              </p>
+
+              {/* Bottom-Right Arrow Indicator without excess space */}
+              <div className="flex justify-end pt-1 mt-auto">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#8b4a3c]/10 group-hover:bg-[#8b4a3c] text-[#8b4a3c] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm group-hover:scale-110">
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </div>
+
             </div>
           </motion.div>
         ))}
@@ -272,6 +293,15 @@ export default function StrategicInitiatives({ maritimeRef, artisticRef }) {
         onClose={handleCloseMaritimeModal}
         onSelectArea={(newArea) => setSelectedMaritimeArea(newArea)}
         allAreas={maritimeResearchAreas}
+      />
+
+      {/* Artistic Research Detail Modal */}
+      <ArtisticResearchModal
+        area={selectedArtisticArea}
+        isOpen={isArtisticModalOpen}
+        onClose={handleCloseArtisticModal}
+        onSelectArea={(newArea) => setSelectedArtisticArea(newArea)}
+        allAreas={artisticResearchAreas}
       />
     </section>
   );
