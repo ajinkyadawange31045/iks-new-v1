@@ -11,75 +11,81 @@ export const maritimeResearchAreas = [
     id: 'shipbuilding-practices',
     title: 'Traditional Shipbuilding and Seafaring Practices',
     cardDescription: 'Investigating indigenous techniques, shipyard hierarchies, and materials.',
-    coverImage: '/images/maritime-research/traditonal-shipbuilding/1.png',
+    coverImage: '/images/maritime-research/traditonal-shipbuilding/1.webp',
     images: [
-      { src: '/images/maritime-research/traditonal-shipbuilding/1.png', caption: 'Traditional Wooden Shipbuilding Yard (Jahajwado)' },
-      { src: '/images/maritime-research/traditonal-shipbuilding/3.png', caption: 'Vessel Framing & Structural Assembly' },
-      { src: '/images/maritime-research/traditonal-shipbuilding/4.png', caption: 'Applying vaato crocodile-fat caulking.' },
+      { src: '/images/maritime-research/traditonal-shipbuilding/1.webp', caption: 'Traditional Wooden Shipbuilding Yard (Jahajwado)' },
+      { src: '/images/maritime-research/traditonal-shipbuilding/3.webp', caption: 'Vessel Framing & Structural Assembly' },
+      { src: '/images/maritime-research/traditonal-shipbuilding/4.webp', caption: 'Applying vaato crocodile-fat caulking.' },
+      { src: '/images/maritime-research/traditonal-shipbuilding/5.webp', caption: 'Interviewing a master craftsman at the traditional shipyard in Mandvi.' },
     ],
     summary:
-      'We spent time with the people who keep this maritime tradition alive—learning how wooden ships are built, how life and responsibilities flow aboard a vessel, and listening to the stories and memories that connect these seafaring communities to their roots.',
+      'We visited the traditional jahajwados across Mandvi, Sikka, and Kochi to document the living craft of indigenous shipbuilding. By studying vessel designs like the Gallivat, modeling traditional hulls, and observing techniques like applying Vaato oil for wood preservation, we recorded the technical expertise that sustains these coastal fleets.',
     points: [
-      'We spent time with the people who keep this maritime tradition alive—learning how wooden ships are built, how life and responsibilities flow aboard a vessel, and listening to the stories and memories that connect these seafaring communities to their roots.',
+      'We visited the traditional jahajwados across Mandvi, Sikka, and Kochi to document the living craft of indigenous shipbuilding. By studying vessel designs like the Gallivat, modeling traditional hulls, and observing techniques like applying Vaato oil for wood preservation, we recorded the technical expertise that sustains these coastal fleets.',
     ],
   },
   {
     id: 'oral-histories',
     title: 'Oral Histories and Ethnography',
     cardDescription: 'Engaging with communities of Malams, Kharwas, and others to record lived experiences, social customs, and seafaring memories.',
-    coverImage: '/images/maritime-research/oral-histories/1.png',
+    coverImage: '/images/maritime-research/oral-histories/1.webp',
     images: [
-      { src: '/images/maritime-research/oral-histories/1.png', caption: 'Ethnographic Field Interviews with Community Elders' },
-      { src: '/images/maritime-research/oral-histories/2.png', caption: 'Oral Testimonies Recorded in Port Settlements' },
-      { src: '/images/maritime-research/oral-histories/3.png', caption: 'Oral Testimonies Recorded in Port Settlements1' },
+      { src: '/images/maritime-research/oral-histories/1.webp', caption: 'Ethnographic Field Interviews with Community Members' },
+      { src: '/images/maritime-research/oral-histories/2.webp', caption: 'Oral Testimonies Recorded in Port Settlements' },
+      { src: '/images/maritime-research/oral-histories/3.webp', caption: 'Oral Testimonies Recorded in Port Settlements' },
+      { src: '/images/maritime-research/oral-histories/4.webp', caption: 'Oral Testimonies Recorded in Port Settlements' },
     ],
     summary:
-      'We spent time with coastal families and veteran navigators to hear their lived stories—learning how customary gatherings like the Malam Ni Baithak uphold community bonds and honor women, visiting watch-points like the Hudiyo Kotho where locals once awaited ships from East Africa, and listening to master mariners recount storms braved since their apprentice days.',
+      'We sat down with the Malam, Kharwa, Bhadala, and Wagher communities across Kachchh, Sikka, and Dwarka to record their lived seafaring experiences. From surviving ocean storms and wartime displacement to navigating by stars and local winds, these oral testimonies preserve the social memory, ancestral wisdom, and deeply rooted heritage of coastal India.',
     points: [
-      'We spent time with coastal families and veteran navigators to hear their lived stories—learning how customary gatherings like the Malam Ni Baithak uphold community bonds and honor women, visiting watch-points like the Hudiyo Kotho where locals once awaited ships from East Africa, and listening to master mariners recount storms braved since their apprentice days.',
+      'We sat down with the Malam, Kharwa, Bhadala, and Wagher communities across Kachchh, Sikka, and Dwarka to record their lived seafaring experiences. From surviving ocean storms and wartime displacement to navigating by stars and local winds, these oral testimonies preserve the social memory, ancestral wisdom, and deeply rooted heritage of coastal India.',
     ],
   },
   {
     id: 'maritime-lexicons',
     title: 'Maritime Lexicons and Language',
     cardDescription: 'Compiling glossaries and technical vocabularies used in traditional navigation.',
-    coverImage: '/images/maritime-research/mariime-lexicons/1.png',
+    coverImage: '/images/maritime-research/mariime-lexicons/1.webp',
     images: [
-      { src: '/images/maritime-research/mariime-lexicons/1.png', caption: 'Field Glossary Documentation of Nautical Terminology' },
+      { src: '/images/maritime-research/mariime-lexicons/1.webp', caption: 'Field Glossary Documentation of Nautical Terminology' },
+      { src: '/images/maritime-research/mariime-lexicons/2.webp', caption: 'Documenting the language of the sea from a veteran Malam' },
     ],
     summary:
-      'We gathered the living language and navigational wisdom of the coast—learning the indigenous names boatbuilders give to each vessel, understanding how master navigators read the stars, winds, and tides alongside tools like the sextant, and preserving the everyday seafaring words passed down across generations.',
+      'We compiled daily glossaries of local navigation terms, boat nomenclature, and regional proverbs directly from traditional navigators. These maritime idioms and technical vocabularies show how generations of practical ocean knowledge are preserved through language and everyday coastal speech.',
     points: [
-      'We gathered the living language and navigational wisdom of the coast—learning the indigenous names boatbuilders give to each vessel, understanding how master navigators read the stars, winds, and tides alongside tools like the sextant, and preserving the everyday seafaring words passed down across generations.',
+      'We compiled daily glossaries of local navigation terms, boat nomenclature, and regional proverbs directly from traditional navigators. These maritime idioms and technical vocabularies show how generations of practical ocean knowledge are preserved through language and everyday coastal speech.',
     ],
   },
   {
     id: 'sacred-geography',
     title: 'Sacred and Cultural Maritime Geography',
     cardDescription: 'Studying temples, shrines, and coastal rituals connected to seafaring life.',
-    coverImage: '/images/maritime-research/sacred-and-cultural-geography/1.png',
+    coverImage: '/images/maritime-research/sacred-and-cultural-geography/1.webp',
     images: [
-      { src: '/images/maritime-research/sacred-and-cultural-geography/1.png', caption: 'Coastal Shrines & Sacred Maritime Spaces' },
-      { src: '/images/maritime-research/sacred-and-cultural-geography/2.png', caption: 'Rituals and Sacred Topography along the Coast' },
+      { src: '/images/maritime-research/sacred-and-cultural-geography/1.webp', caption: 'Coastal Shrines & Sacred Maritime Spaces' },
+      { src: '/images/maritime-research/sacred-and-cultural-geography/2.webp', caption: 'Rituals and Sacred Topography along the Coast' },
+      { src: '/images/maritime-research/sacred-and-cultural-geography/3.webp', caption: 'Faith and fortitude: a warrior issuing challenges under divine protection.' },
+      { src: '/images/maritime-research/sacred-and-cultural-geography/4.webp', caption: 'Still standing at the shore, holding the prayers of those who sailed before.' },
     ],
     summary:
-      'We traced how deeply faith and memory are anchored along this shoreline—learning why sailors offer coconuts at Ashapura Mata and Sikotar Maa temples before every voyage, listening to coastal legends of Okhamandal, and hearing how communities hold steadfast pride in their ancestors who stood firm when ancient Dwarka met the sea.',
+      'We documented the sacred practices and rituals at temples dedicated to Ashapura Mata, Sikotar Maa, and Dariyadev. By recording local folktales of Dwarka and memories of long-distance pilgrimages to Socotra Island, we mapped how faith, divine protection, and spiritual life are tied to seafaring voyages',
     points: [
-      'We traced how deeply faith and memory are anchored along this shoreline—learning why sailors offer coconuts at Ashapura Mata and Sikotar Maa temples before every voyage, listening to coastal legends of Okhamandal, and hearing how communities hold steadfast pride in their ancestors who stood firm when ancient Dwarka met the sea.',
+      'We documented the sacred practices and rituals at temples dedicated to Ashapura Mata, Sikotar Maa, and Dariyadev. By recording local folktales of Dwarka and memories of long-distance pilgrimages to Socotra Island, we mapped how faith, divine protection, and spiritual life are tied to seafaring voyages',
     ],
   },
   {
     id: 'archival-studies',
     title: 'Archival and Material Studies',
     cardDescription: 'Analyzing documents, monastery records, port architecture, and maps.',
-    coverImage: '/images/maritime-research/archival-material-studies/4.png',
+    coverImage: '/images/maritime-research/archival-material-studies/1.webp',
     images: [
-      { src: '/images/maritime-research/archival-material-studies/4.png', caption: 'Visual Documentation of Maritime Architecture & Motifs' },
+      { src: '/images/maritime-research/archival-material-studies/1.webp', caption: 'Manuscript Repository of Ancient Maritime Knowledge' },
+      { src: '/images/maritime-research/archival-material-studies/4.webp', caption: 'Rescuing forgotten records hidden away in a quiet spaces near the coast.' },
     ],
     summary:
-      'We explored coastal settlements to observe how seafaring shapes everyday living spaces—looking at the distinctive architecture of port towns and finding houses adorned with carved fish symbols and ship steering wheels that bring the spirit of the sea right into the home.',
+      'We tracked down and mapped rare Malam ni Pothi navigational manuals across public institutions and private family collections. By reading these alongside Modi script manuscripts, monastery ledgers, and merchant papers, we traced how historical finance, diplomacy, and technical knowledge were recorded and shared along the coast.',
     points: [
-      'We explored coastal settlements to observe how seafaring shapes everyday living spaces—looking at the distinctive architecture of port towns and finding houses adorned with carved fish symbols and ship steering wheels that bring the spirit of the sea right into the home.',
+      'We tracked down and mapped rare Malam ni Pothi navigational manuals across public institutions and private family collections. By reading these alongside Modi script manuscripts, monastery ledgers, and merchant papers, we traced how historical finance, diplomacy, and technical knowledge were recorded and shared along the coast.',
     ],
   },
 ];

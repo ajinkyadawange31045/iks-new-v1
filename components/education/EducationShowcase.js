@@ -8,12 +8,13 @@ import {
   BookOpen, 
   GraduationCap, 
   Briefcase, 
+  Globe,
   ArrowRight,
   Sparkles,
   ChevronRight
 } from 'lucide-react';
 import { educationPillars } from '@/data/educationData';
-import EducationPointModal from '@/components/education/EducationPointModal';
+import EducationPointModal, { getEmbedUrl } from '@/components/education/EducationPointModal';
 
 // Icon Map helper
 const iconComponents = {
@@ -22,15 +23,49 @@ const iconComponents = {
   BookOpen,
   GraduationCap,
   Briefcase,
+  Globe,
 };
+
+// Collect video URLs to lazy load once page loads
+const embeddedVideoUrls = educationPillars
+  .flatMap((pillar) => pillar.points || [])
+  .filter((point) => point.videoUrl)
+  .map((point) => getEmbedUrl(point.videoUrl))
+  .filter(Boolean);
 
 export default function EducationShowcase() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [selectedPoint, setSelectedPoint] = useState(null);
   const [selectedPillarTitle, setSelectedPillarTitle] = useState('');
   const [isPointModalOpen, setIsPointModalOpen] = useState(false);
+  const [shouldLazyLoadVideos, setShouldLazyLoadVideos] = useState(false);
   
   const cardRefs = useRef([]);
+
+  // Start background lazy loading of embedded video(s) once page finishes loading
+  useEffect(() => {
+    const startLazyLoading = () => {
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        window.requestIdleCallback(() => setShouldLazyLoadVideos(true));
+      } else {
+        setShouldLazyLoadVideos(true);
+      }
+    };
+
+    if (typeof document !== 'undefined') {
+      if (document.readyState === 'complete') {
+        const timer = setTimeout(startLazyLoading, 800);
+        return () => clearTimeout(timer);
+      } else {
+        window.addEventListener('load', startLazyLoading, { once: true });
+        const fallbackTimer = setTimeout(startLazyLoading, 2500);
+        return () => {
+          window.removeEventListener('load', startLazyLoading);
+          clearTimeout(fallbackTimer);
+        };
+      }
+    }
+  }, []);
 
   const handleOpenPointModal = (point, parentTitle) => {
     setSelectedPoint(point);
@@ -192,23 +227,52 @@ export default function EducationShowcase() {
                     {pillar.description}
                   </p>
 
-                  {/* Light, Clean List of Clickable Points */}
+                  {/* Light, Clean List of Points */}
                   <ul className="space-y-1.5 pt-2 border-t border-[#8b6f5e]/15">
-                    {pillar.points?.map((point) => (
-                      <li key={point.id}>
-                        <button
-                          type="button"
-                          onClick={() => handleOpenPointModal(point, pillar.title)}
-                          className="w-full py-2.5 px-3 rounded-xl text-left transition-all duration-200 flex items-center justify-between group hover:bg-[#8b4a3c]/8 cursor-pointer border-b border-[#8b6f5e]/10 last:border-b-0"
-                        >
-                          <span className="text-sm sm:text-base font-serif-body text-[#5c3a2a] group-hover:text-[#8b4a3c] transition-colors flex items-center space-x-2.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#8b4a3c]/70 group-hover:scale-125 transition-transform flex-shrink-0" />
-                            <span>{point.title}</span>
-                          </span>
-                          <ArrowRight className="w-4 h-4 text-[#8b6f5e]/40 group-hover:text-[#8b4a3c] transform group-hover:translate-x-1 transition-all flex-shrink-0 ml-3" />
-                        </button>
-                      </li>
-                    ))}
+                    {pillar.points?.map((point) => {
+                      const hasModalContent = !point.unclickable && !!(
+                        point.image || 
+                        (point.images && point.images.length > 0) || 
+                        point.videoUrl || 
+                        point.pdfUrl
+                      );
+
+                      if (!hasModalContent) {
+                        return (
+                          <li key={point.id} className="py-2.5 px-3 rounded-xl border-b border-[#8b6f5e]/10 last:border-b-0 select-text">
+                            <div className="text-sm sm:text-base font-serif-body text-[#5c3a2a] flex items-baseline space-x-2.5 leading-relaxed">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#8b4a3c]/70 flex-shrink-0 self-center" />
+                              <span>
+                                {point.description ? (
+                                  <>
+                                    <strong className="font-semibold text-[#5c3a2a]">{point.title}:</strong>{' '}
+                                    <span className="text-[#8b6f5e]">{point.description}</span>
+                                  </>
+                                ) : (
+                                  <span className="text-[#5c3a2a]">{point.title}</span>
+                                )}
+                              </span>
+                            </div>
+                          </li>
+                        );
+                      }
+
+                      return (
+                        <li key={point.id}>
+                          <button
+                            type="button"
+                            onClick={() => handleOpenPointModal(point, pillar.title)}
+                            className="w-full py-2.5 px-3 rounded-xl text-left transition-all duration-200 flex items-center justify-between group hover:bg-[#8b4a3c]/8 cursor-pointer border-b border-[#8b6f5e]/10 last:border-b-0"
+                          >
+                            <span className="text-sm sm:text-base font-serif-body text-[#5c3a2a] group-hover:text-[#8b4a3c] transition-colors flex items-center space-x-2.5">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#8b4a3c]/70 group-hover:scale-125 transition-transform flex-shrink-0" />
+                              <span>{point.title}</span>
+                            </span>
+                            <ArrowRight className="w-4 h-4 text-[#8b6f5e]/40 group-hover:text-[#8b4a3c] transform group-hover:translate-x-1 transition-all flex-shrink-0 ml-3" />
+                          </button>
+                        </li>
+                      );
+                    })}
                   </ul>
 
                 </motion.div>
@@ -227,6 +291,25 @@ export default function EducationShowcase() {
         onClose={handleClosePointModal}
         parentPillarTitle={selectedPillarTitle}
       />
+
+      {/* Background lazy loading for embedded video(s) after page loads */}
+      {shouldLazyLoadVideos && embeddedVideoUrls.length > 0 && (
+        <div
+          aria-hidden="true"
+          className="fixed -bottom-10 left-0 w-1 h-1 opacity-0 pointer-events-none overflow-hidden -z-50"
+        >
+          {embeddedVideoUrls.map((url, idx) => (
+            <iframe
+              key={idx}
+              src={url}
+              loading="lazy"
+              tabIndex={-1}
+              title="Background video lazy loader"
+              className="w-1 h-1 border-0"
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

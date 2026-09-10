@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FileText, Images, X } from 'lucide-react';
 
-const eventPath = (folder, file) => `/Events/${encodeURIComponent(folder)}/${encodeURIComponent(file)}`;
+const eventPath = (folder, file) => `/Events/${encodeURIComponent(folder?.trim() || '')}/${encodeURIComponent(file?.trim() || '')}`;
 
 export default function EventsList({ events }) {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -43,7 +43,7 @@ export default function EventsList({ events }) {
               className="block w-full text-left"
             >
               {event.images?.[0] && (
-                <div className="relative h-56 w-full overflow-hidden">
+                <div className="relative h-56 w-full overflow-hidden bg-stone-900">
                   <img
                     src={eventPath(event.folder, event.images[0])}
                     alt={event.title}

@@ -30,15 +30,15 @@ export default function Hero({ onExploreClick }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="hero-text"
           >
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#5c3a2a] mb-1 font-serif-body tracking-wide">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#5c3a2a] mb-1 font-serif-body tracking-wide font-medium">
               Maritime and Artistic Traditions
             </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#5c3a2a] mb-2 font-serif-body">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#5c3a2a]/90 mb-1 font-serif-body">
               IKS Research Center
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif-elegant font-bold tracking-tight text-[#5c3a2a] mb-6 sm:mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif-elegant font-semibold text-[#6b4938] tracking-wide mb-5 sm:mb-6">
               Somaiya Vidyavihar University
-            </h1>
+            </p>
           </motion.div>
 
           <motion.div
@@ -47,15 +47,15 @@ export default function Hero({ onExploreClick }) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mb-6 sm:mb-8"
           >
-            <p className="text-sm sm:text-base md:text-lg text-[#8b6f5e] mb-2 font-serif-body">
+            <p className="text-xs sm:text-sm md:text-base uppercase tracking-widest text-[#8b6f5e] mb-2 font-serif-body font-semibold">
               Awarded by
             </p>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif-elegant font-bold text-[#5c3a2a] mb-1">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.6rem] font-serif-elegant font-bold tracking-tight text-[#5c3a2a] mb-1 sm:mb-1.5 leading-tight">
               Indian Knowledge Systems (IKS)
-            </p>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif-elegant font-bold text-[#5c3a2a]">
+            </h1>
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[2.1rem] font-serif-elegant font-bold tracking-tight text-[#5c3a2a] leading-tight">
               Division of Ministry of Education
-            </p>
+            </h2>
           </motion.div>
 
           <motion.p
