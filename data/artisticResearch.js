@@ -15,10 +15,10 @@ export const artisticResearchAreas = [
     images: [
       { src: '/images/artistic-research/chitrakathi-visual-storytelling/1.webp', caption: 'Chitrakathi Narrative Folios & Traditional Iconography' },
       { src: '/images/artistic-research/chitrakathi-visual-storytelling/2.webp', caption: 'Traditional Picture Scroll Depicting Epic Narratives' },
-      { src: '/images/artistic-research/chitrakathi-visual-storytelling/3.webp', caption: 'Rare Rasik Priya Manuscript Folio Documentation' },
+      { src: '/images/artistic-research/chitrakathi-visual-storytelling/3.webp', caption: 'Rare Rasik Priya paintings seminar' },
       { src: '/images/artistic-research/chitrakathi-visual-storytelling/4.webp', caption: 'Recording oral traditions and shared cultural history directly from the community.' },
-      { src: '/images/artistic-research/chitrakathi-visual-storytelling/5.webp', caption: 'Lecture & Scholarly Presentation on Chitrakathi Tradition: Micro and Macro Studies' },
-      { src: '/images/artistic-research/chitrakathi-visual-storytelling/6.webp', caption: 'Scholars, Faculty & Research Team at the Chitrakathi Traditions Symposium' },
+      { src: '/images/artistic-research/chitrakathi-visual-storytelling/5.webp', caption: 'Revitalizing Chitrakathi, a traditional storytelling art form' },
+      { src: '/images/artistic-research/chitrakathi-visual-storytelling/6.webp', caption: 'Revitalizing Chitrakathi, a traditional storytelling art form' },
     ],
     summary:
       'We spent time in Pinguli village with the Masge family, recording how Chitrakathi storytellers perform using picture cards today. Documenting their family museum and live performances helped us see how contemporary practices differ from older historical paintings.  ',
@@ -35,7 +35,7 @@ export const artisticResearchAreas = [
       { src: '/images/artistic-research/performative-oral-folk/1.webp', caption: 'Theatrical Stage Performance & Live Epic Recitation' },
       { src: '/images/artistic-research/performative-oral-folk/2.webp', caption: 'Dramatic Enactment during Traditional Ramleela Performance' },
       { src: '/images/artistic-research/performative-oral-folk/3.webp', caption: 'Folk Storytellers and Stage Performers in Field Documentation' },
-      { src: '/images/artistic-research/performative-oral-folk/4.webp', caption: 'Deccan Shadow Puppetry and Performative Heritage' },
+      { src: '/images/artistic-research/performative-oral-folk/4.webp', caption: 'Performative Heritage' },
     ],
     summary:
       'We looked at how Chitrakathi paintings connect with leather shadow puppets, folk theatre, and temple wall murals across the Deccan. Studying these media side by side shows how visual storytelling and oral traditions share common themes and artistic styles.',
@@ -49,10 +49,8 @@ export const artisticResearchAreas = [
     cardDescription: 'Tracing historical folios across museum archives while analyzing natural pigments, archaeological contexts at Hampi, and ancient rock carvings.',
     coverImage: '/images/artistic-research/provenance-materiality/1.webp',
     images: [
-      { src: '/images/artistic-research/provenance-materiality/1.webp', caption: 'Field Examination of Organic Pigments & Natural Mineral Dyes' },
-      { src: '/images/artistic-research/provenance-materiality/2.webp', caption: 'Material Analysis of Traditional Binder Preparation' },
-      { src: '/images/artistic-research/provenance-materiality/3.webp', caption: 'Documentation of Historical Handmade Paper and Folio Substrates' },
-      { src: '/images/artistic-research/provenance-materiality/4.webp', caption: 'Archival Conservation & Physical Micro-Analysis of Artworks' },
+      { src: '/images/artistic-research/provenance-materiality/1.webp', caption: 'visit to Museums' },
+      { src: '/images/artistic-research/provenance-materiality/2.webp', caption: 'visit to Museums' },
     ],
     summary:
       'We studied collections at the Raja Dinkar Kelkar Museum, Zapurza Museum, and private auction records to trace where older Paithan paintings came from. Examining these physical pieces helped us map three centuries of patronage, ownership, and artistic styles across the region.  ',
@@ -69,7 +67,7 @@ export const artisticResearchAreas = [
       { src: '/images/artistic-research/regional-art-iconography/1.webp', caption: 'Regional Stone Sculpture & Iconographic Traditions Exhibition' },
       { src: '/images/artistic-research/regional-art-iconography/2.webp', caption: 'Curated Displays of Traditional Iconography & Carvings' },
       { src: '/images/artistic-research/regional-art-iconography/3.webp', caption: 'Traditional Board Game Motifs & Aesthetic Systems Workshop' },
-      { src: '/images/artistic-research/regional-art-iconography/4.webp', caption: 'Hands-On Engagement with Regional Art Patterns' },
+      { src: '/images/artistic-research/regional-art-iconography/4.webp', caption: 'Traditional Board Game Motifs & Aesthetic Systems Workshop' },
     ],
     summary:
       'We surveyed temple sculptures, hero-stones at Katvan Leni, and regional painting traditions to study their visual symbols. From South Indian influences on Deccan art to Tantric imagery in Mandi paintings, we mapped how shared iconography travels across stone, canvas, and story.  ',
@@ -83,7 +81,7 @@ export const artisticResearchAreas = [
     cardDescription: 'Fostering living heritage through community workshops, immersive student interactions, and participatory art exhibitions that keep regional traditions vibrant.',
     coverImage: '/images/artistic-research/visual-culture-community/1.webp',
     images: [
-      { src: '/images/artistic-research/visual-culture-community/1.webp', caption: 'How local painting traditions structure narrative, spatial hierarchy, and shared visual culture.' },
+      { src: '/images/artistic-research/visual-culture-community/1.webp', caption: 'Local painting traditions serve as a sustainable cultural framework' },
       { src: '/images/artistic-research/visual-culture-community/2.webp', caption: 'Art beyond galleries: engaging with the people and practices that keep local culture alive.' },
     ],
     summary:
